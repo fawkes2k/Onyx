@@ -1,11 +1,10 @@
 ﻿using Onyx.Objects;
 using System.Windows.Controls;
 
-namespace Onyx
-{
+namespace Onyx {
     public class OnyxWorld {
-        Canvas canvas;
-        List<AObject3D> objects3D;
+        public Canvas canvas;
+        public List<AObject3D> objects3D;
 
         public OnyxWorld(Canvas aCanvas) {
             canvas = aCanvas;
@@ -14,7 +13,12 @@ namespace Onyx
 
         public void Add(AObject3D aObject3D) {
             objects3D.Add(aObject3D);
-            aObject3D.Register(canvas);
+        }
+
+        public void Render() {
+            foreach (var obj in objects3D) {
+                obj.Render();
+            }
         }
     }
 }
