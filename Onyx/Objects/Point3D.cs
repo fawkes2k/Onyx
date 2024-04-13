@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using Onyx.Mathematics;
+using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -15,24 +16,12 @@ namespace Onyx.Objects {
             aWorld.canvas.Children.Add(ellipse);
         }
 
-        public static void RotateX(ref double y, ref double z, double angle) {
-            double sinTheta = Math.Sin(angle), cosTheta = Math.Cos(angle), px = y * cosTheta + z * sinTheta;
-            z = z * cosTheta - y * sinTheta;
-            y = px;
-        }
-
-        public static void RotateY(ref double x, ref double z, double angle) {
-            double sinTheta = Math.Sin(angle), cosTheta = Math.Cos(angle), px = x * cosTheta + z * sinTheta;
-            z = z * cosTheta - x * sinTheta;
-            x = px;
-        }
-
         double ang = 0.0;
         public override void Render() {
             double px = X, py = Y, pz = Z;
 
-            RotateX(ref py, ref pz, ang);
-            RotateY(ref px, ref pz, ang);
+            Rotator.RotateX(ref py, ref pz, ang);
+            Rotator.RotateY(ref px, ref pz, ang);
             ang += 0.03;
             pz += 200.0;
             
