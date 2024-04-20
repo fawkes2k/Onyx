@@ -2,15 +2,12 @@
 {
     public abstract class AObject3D
     {
-        public double X, Y, Z;
+        public Vector3D V;
         public OnyxWorld world;
 
-        public AObject3D(double x, double y, double z, OnyxWorld aWorld)
+        public AObject3D(Vector3D v, OnyxWorld aWorld)
         {
-            X = x;
-            Y = y;
-            Z = z;
-
+            V = v;
             world = aWorld;
         }
 

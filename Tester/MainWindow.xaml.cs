@@ -15,9 +15,9 @@ namespace Tester
         {
             InitializeComponent();
 
-            Color white = Color.FromRgb(0xFF, 0xFF, 0xFF);
             world = new OnyxWorld(GameworldCanvas);
-            world.Add(new Noise3D(0, 0, 0, 50, 100, 200, 100, world));
+            world.Add(new Line3D(new Vector3D(0, 0, 0), new Vector3D(50, 50, 50), 100, Color.FromRgb(0, 0, 0), world));
+            // world.Add(new Noise3D(new Vector3D(0, 0, 0), new Vector3D(50, 100, 200), 100, world));
 
             DispatcherTimer timer = new()
             {

@@ -8,10 +8,12 @@ namespace Onyx.Objects
     public class Point3D : AObject3D
     {
         readonly Ellipse ellipse;
+        public Vector3D VV;
         public Color color;
 
-        public Point3D(double x, double y, double z, Color point_color, OnyxWorld aWorld) : base(x, y, z, aWorld)
+        public Point3D(Vector3D v, Color point_color, OnyxWorld aWorld) : base(v, aWorld)
         {
+            VV = v;
             color = point_color;
             ellipse = new Ellipse
             {
@@ -25,7 +27,7 @@ namespace Onyx.Objects
         double ang = 0.0;
         public override void Render()
         {
-            double px = X, py = Y, pz = Z;
+            double px = VV.X, py = VV.Y, pz = VV.Z;
 
             Rotator.RotateX(ref py, ref pz, ang);
             Rotator.RotateY(ref px, ref pz, ang);
