@@ -1,12 +1,12 @@
-﻿using System.Windows.Media;
-
-namespace Onyx.Objects {
-    public abstract class AObject3D {
+﻿namespace Onyx.Objects
+{
+    public abstract class AObject3D
+    {
         public double X, Y, Z;
         public OnyxWorld world;
-        public Color color = Color.FromRgb(0xFF, 0xFF, 0xFF);
 
-        public AObject3D(double x, double y, double z, OnyxWorld aWorld) {
+        public AObject3D(double x, double y, double z, OnyxWorld aWorld)
+        {
             X = x;
             Y = y;
             Z = z;
